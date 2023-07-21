@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <script src="RPS.js"></script>
+</head>
+<body>
+    <script>
+        const getComputerChoice = () =>{
+            let random = Math.floor(Math.random()*3);
+            switch(random){
+                case 0:
+                    return "rock";
+                    break;
+                case 1: 
+                    return "paper";
+                    break;
+                case 2: 
+                    return "scissors";
+                    break;
+            };
+        }
+        const computerSelection = getComputerChoice();
+        const playerSelection = "PAPER";
+        const playRound = (playerSelection, computerSelection) => {
+            let p = playerSelection.toLowerCase();
+            let c = computerSelection;
+            if(p == "rock" && c == "scissors"){
+                    return "You Win! Rock beats Scissors";
+                    
+                }
+            else if(p == "rock" && c == "rock"){
+                    return "Draw!";
+                    
+                }
+            else if(p == "rock" && c == "paper"){
+                    return "You Lose! Paper beats Rock";
+                    
+            }
+
+            else if(p == "scissors" && c == "scissors"){
+                    return "Draw!";
+                    
+                }
+            else if(p == "scissors" && c == "rock"){
+                    return "You Lose! Rock beats Scissors";
+                    
+                }
+            else if(p == "scisors" && c == "paper"){
+                    return "You Win! Scissors beats Paper";     
+            }
+
+            else if(p == "paper" && c == "scissors"){
+                    return "You Lose! Scissors beats Paper";
+                    
+                }
+            else if(p == "paper" && c == "rock"){
+                    return "You Win! Paper beats Rock";
+                    
+                }
+            else if(p == "paper" && c == "paper"){
+                    return "Draw!";
+                    
+            }
+        }
+        
+
+
+        
+
+        
+    </script>
+</body>
+</html>
