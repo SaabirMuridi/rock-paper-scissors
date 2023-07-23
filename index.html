@@ -24,6 +24,7 @@
         }
         const computerSelection = getComputerChoice();
         const playerSelection = "PAPER";
+
         const playRound = (playerSelection, computerSelection) => {
             let p = playerSelection.toLowerCase();
             let c = computerSelection;
@@ -48,7 +49,7 @@
                     return "You Lose! Rock beats Scissors";
                     
                 }
-            else if(p == "scisors" && c == "paper"){
+            else if(p == "scissors" && c == "paper"){
                     return "You Win! Scissors beats Paper";     
             }
 
@@ -65,8 +66,36 @@
                     
             }
         }
-        
-
+        const game = () => { 
+            let player = 0;
+            let cpu = 0;
+            for(let i = 1; i<=5; i++){
+                const playerSelection = prompt("Choose rock, paper, or scissors");
+                const computerSelection = getComputerChoice();
+                let result = playRound(playerSelection, computerSelection);
+                console.log(result);
+                if(result.indexOf("Win") > -1){
+                    player++;
+                }
+                else if(result.indexOf("Lose") > -1){
+                    cpu++;
+                }
+                console.log("player points: ", player)
+                console.log("cpu points: ", cpu)
+                if(i == 5){
+                    if(player > cpu){
+                        console.log("You are the winner, congratulations!")
+                    }
+                    else if(cpu > player){
+                        console.log("You lost! The cpu is the winner.")
+                    }
+                    else{
+                        console.log("Draw game!")
+                    }
+                }
+            }
+        }
+        console.log(game())
 
         
 
